@@ -1,0 +1,21 @@
+dressme_homepage:
+    path:     /
+    defaults: { _controller: DressmeBundle:Dressme:index}
+login:
+    path:     /login
+    defaults: { _controller: DressmeBundle:Dressme:login }
+home:
+    path:     /home
+    defaults: { _controller: DressmeBundle:Dressme:home }
+profil:
+    path:     /profil
+    defaults: { _controller: DressmeBundle:Dressme:profil }
+encaissement:
+    path:     /encaissement
+    defaults: { _controller: DressmeBundle:Dressme:encaissement }
+clients:
+    path:     /clients
+    defaults: { _controller: DressmeBundle:Dressme:clients }
+prestations:
+    path:     /prestations
+    defaults: { _controller: DressmeBundle:Dressme:prestations }
