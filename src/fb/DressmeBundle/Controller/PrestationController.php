@@ -22,7 +22,7 @@ class PrestationController extends Controller
 
         $prestations = $em->getRepository('DressmeBundle:Prestation')->findAll();
 
-        return $this->render('prestation/index.html.twig', array(
+        return $this->render('@Dressme/Dressme/prestation/index.html.twig', array(
             'prestations' => $prestations,
         ));
     }
@@ -45,7 +45,7 @@ class PrestationController extends Controller
             return $this->redirectToRoute('prestation_show', array('id' => $prestation->getId()));
         }
 
-        return $this->render('prestation/new.html.twig', array(
+        return $this->render('@Dressme/Dressme/prestation/new.html.twig', array(
             'prestation' => $prestation,
             'form' => $form->createView(),
         ));
@@ -59,7 +59,7 @@ class PrestationController extends Controller
     {
         $deleteForm = $this->createDeleteForm($prestation);
 
-        return $this->render('prestation/show.html.twig', array(
+        return $this->render('@Dressme/Dressme/prestation/show.html.twig', array(
             'prestation' => $prestation,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -81,7 +81,7 @@ class PrestationController extends Controller
             return $this->redirectToRoute('prestation_edit', array('id' => $prestation->getId()));
         }
 
-        return $this->render('prestation/edit.html.twig', array(
+        return $this->render('@Dressme/Dressme/prestation/edit.html.twig', array(
             'prestation' => $prestation,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -97,13 +97,11 @@ class PrestationController extends Controller
         $form = $this->createDeleteForm($prestation);
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($prestation);
             $em->flush();
-        }
-
-        return $this->redirectToRoute('prestation_index');
+        
+        return $this->redirectToRoute('prestations');
     }
 
     /**

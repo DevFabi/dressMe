@@ -62,8 +62,9 @@
 				        <td>{{ prestation.libelle }}</td>
 				        <td>{{ prestation.prix }}</td>
 				        <td>{{ prestation.categorie }}</td>
-				        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifierClient">Modifier</button>
-<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerClient">Supprimer</button></td>
+				       <td><a href="{{ path('prestation_edit', { 'id': prestation.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+<a href="{{ path('prestation_delete', { 'id': prestation.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a>
+               </td>
 {% endfor %}
 				      </tr>
 <!-- MODAL MODIFICATION CLIENT -->

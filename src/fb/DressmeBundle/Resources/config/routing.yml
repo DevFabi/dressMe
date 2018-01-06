@@ -47,3 +47,27 @@ client_delete:
     defaults: { _controller: "DressmeBundle:Client:delete" }
     methods:  GET
 
+prestation_index:
+    path:     /prestation/
+    defaults: { _controller: "DressmeBundle:Prestation:index" }
+    methods:  GET
+
+prestation_show:
+    path:     /prestation/{id}/show
+    defaults: { _controller: "DressmeBundle:Prestation:show" }
+    methods:  GET
+
+prestation_new:
+    path:     /prestation/new
+    defaults: { _controller: "DressmeBundle:Prestation:new" }
+    methods:  [GET, POST]
+
+prestation_edit:
+    path:     /prestation/{id}/edit
+    defaults: { _controller: "DressmeBundle:Prestation:edit" }
+    methods:  [GET, POST]
+
+prestation_delete:
+    path:     /prestation/{id}/delete
+    defaults: { _controller: "DressmeBundle:Prestation:delete" }
+    methods:  GET
