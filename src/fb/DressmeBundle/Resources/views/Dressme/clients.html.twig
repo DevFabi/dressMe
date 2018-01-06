@@ -15,7 +15,7 @@
 <div class="row">
 <div class="col-sm-4 col-xs-2"></div>
 <!--  BOUTON AJOUTER CLIENT: Ouvre un modal -->
-<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#ajoutClient">+ Ajouter un client</button></div>
+<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#ajoutClient">+ Ajouter un client</button></div></div>
 
 <!-- MODAL AJOUTER CLIENT -->
 <div id="ajoutClient" class="modal fade" role="dialog">
@@ -28,9 +28,21 @@
         <h4 class="modal-title">Ajout d'un client</h4>
       </div>
       <div class="modal-body">
-        <p>  {{ form(form) }}
-  {{ form_rest(form) }}
-</p>
+ 
+
+   {{ form_start(form) }}
+
+
+  <div class="form-groupe">
+  <div class="label-style">{{ form_label(form.categorie, 'Selection du client') }}</div>
+  {{ form_widget(form.categorie, {'attr':{'class':'form-control'}}) }}
+  {{ form_errors(form.categorie) }}
+
+
+
+
+{{ form_end(form) }}
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -54,20 +66,22 @@
 				        <th>id</th>
 				        <th>Nom</th>
 				        <th>Prénom</th>
-				        <th>Age</th>
-				        <th>Catégorie</th>
+				       <!--  <th>Catégorie</th> -->
 				        <th>Action</th>
 				      </tr>
 				    </thead>
 				    <tbody>
-				      <tr>
-				        <td>1</td>
-				        <td>Anna</td>
-				        <td>Rohro</td>
-				        <td>28</td>
-				        <td>Femme</td>
-				        <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifierClient">Modifier</button>
-<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerClient">Supprimer</button></td>
+				       {% for client in client %}
+       
+              <tr>
+                <td>{{ client.id }}</td>
+                <td>{{ client.nom }}</td>
+                <td>{{ client.prenom }}</td>
+                <!-- <td></td> -->
+                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifierClient">Modifier</button>
+<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerClient">Supprimer</button>
+<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#ficheClient">Fiche technique</button></td>
+{% endfor %}
 				      </tr>
 <!-- MODAL MODIFICATION CLIENT -->
 <div id="modifierClient" class="modal fade" role="dialog">
@@ -90,6 +104,27 @@
   </div>
 </div>
 <!-- FIN MODAL MODIFICATION -->
+<!-- MODAL FICHE TECHNIQUE -->
+<div id="ficheClient" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Fiche technique de : </h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- FIN FICHE TECHNIQUE-->
 <!-- MODAL SUPPRESSION CLIENT -->
 <div id="supprimerClient" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -112,17 +147,6 @@
 </div>
 <!-- FIN MODAL SUPPRESSION -->
 
-<!--  A SUPPRIMER ( POUR TEST) -->
-				      <tr>
-				        <td>2</td>
-				        <td>Dobby</td>
-				        <td>Nah</td>
-				        <td>33</td>
-				        <td>Homme</td>
-				        <td><button type="button" class="btn btn-warning">Modifier</button>
-<button type="button" class="btn btn-danger">Supprimer</button></td>
-				      </tr>
-<!-- FIN DE ' A SUPPRIMER ' -->
 
 				    </tbody>
 			  </table>

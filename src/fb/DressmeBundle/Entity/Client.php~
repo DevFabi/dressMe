@@ -1,8 +1,6 @@
 <?php
 
 namespace fb\DressmeBundle\Entity;
-use Doctrine\Common\Collections\ArrayCollection;
-
 
 use Doctrine\ORM\Mapping as ORM;
 
@@ -90,10 +88,6 @@ class Client
      */
     private $photo;
 
-public function __toString() {
-    return $this->prenom;
-    return $this->nom;
-}
 
     /**
      * Get id
@@ -296,38 +290,5 @@ public function __toString() {
     {
         return $this->photo;
     }
-
-    /**
-     * Add categorie
-     *
-     * @param \fb\DressmeBundle\Entity\Categorie $categorie
-     *
-     * @return Client
-     */
-    public function addCategorie(\fb\DressmeBundle\Entity\Categorie $categorie)
-    {
-        $this->categorie[] = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * Remove categorie
-     *
-     * @param \fb\DressmeBundle\Entity\Categorie $categorie
-     */
-    public function removeCategorie(\fb\DressmeBundle\Entity\Categorie $categorie)
-    {
-        $this->categorie->removeElement($categorie);
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
 }
+

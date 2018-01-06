@@ -19,3 +19,6 @@ clients:
 prestations:
     path:     /prestations
     defaults: { _controller: DressmeBundle:Dressme:prestations }
+fichetechnique:
+    path:     /fichetechnique
+    defaults: { _controller: DressmeBundle:Dressme:fichetechnique }

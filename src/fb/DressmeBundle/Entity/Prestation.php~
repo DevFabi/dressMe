@@ -41,9 +41,7 @@ class Prestation
      */
     private $prix;
 
-public function __toString() {
-    return $this->libelle;
-}
+
     /**
      * Get id
      *
@@ -101,28 +99,5 @@ public function __toString() {
     {
         return $this->prix;
     }
-
-    /**
-     * Set categorie
-     *
-     * @param \fb\DressmeBundle\Entity\Categorie $categorie
-     *
-     * @return Prestation
-     */
-    public function setCategorie(\fb\DressmeBundle\Entity\Categorie $categorie)
-    {
-        $this->categorie = $categorie;
-
-        return $this;
-    }
-
-    /**
-     * Get categorie
-     *
-     * @return \fb\DressmeBundle\Entity\Categorie
-     */
-    public function getCategorie()
-    {
-        return $this->categorie;
-    }
 }
+

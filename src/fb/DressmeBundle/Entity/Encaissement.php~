@@ -1,0 +1,90 @@
+<?php
+
+namespace fb\DressmeBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Encaissement
+ *
+ * @ORM\Table(name="encaissement")
+ * @ORM\Entity(repositoryClass="fb\DressmeBundle\Repository\EncaissementRepository")
+ */
+class Encaissement
+{   
+    public function __construct()
+  {
+
+        $this->modepayement = new ArrayCollection();
+        $this->client = new ArrayCollection();
+        $this->prestation = new ArrayCollection();
+  }
+
+    /**
+     * @ORM\ManyToMany(targetEntity="fb\DressmeBundle\Entity\ModePayement", cascade={"persist"})
+     */
+    private $modePayement;
+    /**
+     * @ORM\ManyToMany(targetEntity="fb\DressmeBundle\Entity\Prestation", cascade={"persist"})
+     */
+    private $prestation;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="fb\DressmeBundle\Entity\Client", cascade={"persist"})
+     */
+    private $client;
+
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Add modePayement
+     *
+     * @param \fb\DressmeBundle\Entity\ModePayement $modePayement
+     *
+     * @return Encaissement
+     */
+    public function addModePayement(\fb\DressmeBundle\Entity\ModePayement $modePayement)
+    {
+        $this->modePayement[] = $modePayement;
+
+        return $this;
+    }
+
+    /**
+     * Remove modePayement
+     *
+     * @param \fb\DressmeBundle\Entity\ModePayement $modePayement
+     */
+    public function removeModePayement(\fb\DressmeBundle\Entity\ModePayement $modePayement)
+    {
+        $this->modePayement->removeElement($modePayement);
+    }
+
+    /**
+     * Get modePayement
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getModePayement()
+    {
+        return $this->modePayement;
+    }
+}

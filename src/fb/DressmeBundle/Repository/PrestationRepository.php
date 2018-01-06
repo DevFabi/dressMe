@@ -10,4 +10,13 @@ namespace fb\DressmeBundle\Repository;
  */
 class PrestationRepository extends \Doctrine\ORM\EntityRepository
 {
+	public function findPrestation()
+    {
+        return $this->getEntityManager()
+            ->createQuery(
+                'SELECT p FROM DressmeBundle:Prestation p '
+            )
+            ->getResult();
+    }
+
 }

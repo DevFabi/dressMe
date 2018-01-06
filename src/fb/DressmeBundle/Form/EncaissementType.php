@@ -15,7 +15,7 @@ use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
-class ClientType extends AbstractType
+class EncaissementType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -23,18 +23,9 @@ class ClientType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('categorie', EntityType::class, array('class' => 'DressmeBundle:Categorie',
-            'multiple' => true,
-    ))
-        ->add('nom')
-        ->add('prenom')
-        ->add('dateNaissance', DateType::class, array(
-    'widget' => 'single_text'))
-        ->add('adresse', TextType::class)
-        ->add('ville')
-        ->add('codePostal')
-        ->add('email', EmailType::class)
-        ->add('photo')
+        ->add('client')
+        ->add('prestation')
+        ->add('modePayement')
         ->add('Valider',   SubmitType::class);
     }
     
@@ -44,7 +35,7 @@ class ClientType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'fb\DressmeBundle\Entity\Client'
+            'data_class' => 'fb\DressmeBundle\Entity\Encaissement'
         ));
     }
 
@@ -53,7 +44,7 @@ class ClientType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'fb_dressmebundle_client';
+        return 'fb_dressmebundle_encaissement';
     }
 
 
