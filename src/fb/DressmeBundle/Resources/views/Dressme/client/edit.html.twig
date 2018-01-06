@@ -1,21 +1,33 @@
-{% extends 'base.html.twig' %}
+{% extends "DressmeBundle:Dressme:home.html.twig" %}
+
 
 {% block body %}
-    <h1>Client edit</h1>
 
-    {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+
+<div class="tab">
+<div class="container">
+    
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+<div class="modal-body">
+    <h1>Modification du client</h1>
+
+ {{ form_start(edit_form) }}
+
+
+  <div class="form-groupe">
+  <div class="label-style">{{ form_label(edit_form.categorie, 'Selection du client') }}</div>
+  {{ form_widget(edit_form.categorie, {'attr':{'class':'form-control'}}) }}
+  {{ form_errors(edit_form.categorie) }}
+
     {{ form_end(edit_form) }}
+    <button type="submit" class="btn btn-success ">Valider</button>
 
-    <ul>
-        <li>
-            <a href="{{ path('client_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+  
+       
+       
+            
+            <a href="{{ path('clients') }}"><button type="button" class="btn btn-primary">Retour</button></a>
+       </div>
+       </div>
+</div></div></div>
 {% endblock %}

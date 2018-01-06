@@ -42,6 +42,8 @@
 
 
 {{ form_end(form) }}
+<br> <button type="submit" class="btn btn-success ">Valider</button>
+
 
       </div>
       <div class="modal-footer">
@@ -78,9 +80,10 @@
                 <td>{{ client.nom }}</td>
                 <td>{{ client.prenom }}</td>
                 <!-- <td></td> -->
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifierClient">Modifier</button>
-<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerClient">Supprimer</button>
-<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#ficheClient">Fiche technique</button></td>
+                <td><a href="{{ path('client_edit', { 'id': client.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+
+<a href="{{ path('client_delete', { 'id': client.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a>
+<a href="{{ path('fichetechnique') }}"><button type="button" class="btn btn-primary ">Fiche technique</button></a></td>
 {% endfor %}
 				      </tr>
 <!-- MODAL MODIFICATION CLIENT -->

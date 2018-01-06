@@ -34,8 +34,7 @@ class ClientType extends AbstractType
         ->add('ville')
         ->add('codePostal')
         ->add('email', EmailType::class)
-        ->add('photo')
-        ->add('Valider',   SubmitType::class);
+        ->add('photo');
     }
     
     /**

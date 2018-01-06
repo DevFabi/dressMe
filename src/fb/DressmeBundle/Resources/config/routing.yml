@@ -22,3 +22,28 @@ prestations:
 fichetechnique:
     path:     /fichetechnique
     defaults: { _controller: DressmeBundle:Dressme:fichetechnique }
+client_index:
+    path:     /i
+    defaults: { _controller: "DressmeBundle:Client:index" }
+    methods:  GET
+
+client_show:
+    path:     /{id}/show
+    defaults: { _controller: "DressmeBundle:Client:show" }
+    methods:  GET
+
+client_new:
+    path:     /new
+    defaults: { _controller: "DressmeBundle:Client:new" }
+    methods:  [GET, POST]
+
+client_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DressmeBundle:Client:edit" }
+    methods:  [GET, POST]
+
+client_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DressmeBundle:Client:delete" }
+    methods:  GET
+

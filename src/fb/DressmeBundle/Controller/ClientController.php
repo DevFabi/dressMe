@@ -4,22 +4,17 @@ namespace fb\DressmeBundle\Controller;
 
 use fb\DressmeBundle\Entity\Client;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Client controller.
  *
- * @Route("client")
  */
 class ClientController extends Controller
 {
     /**
      * Lists all client entities.
      *
-     * @Route("/", name="client_index")
-     * @Method("GET")
      */
     public function indexAction()
     {
@@ -27,7 +22,7 @@ class ClientController extends Controller
 
         $clients = $em->getRepository('DressmeBundle:Client')->findAll();
 
-        return $this->render('client/index.html.twig', array(
+        return $this->render('@Dressme/Dressme/client/index.html.twig', array(
             'clients' => $clients,
         ));
     }
@@ -35,8 +30,6 @@ class ClientController extends Controller
     /**
      * Creates a new client entity.
      *
-     * @Route("/new", name="client_new")
-     * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
@@ -52,7 +45,7 @@ class ClientController extends Controller
             return $this->redirectToRoute('client_show', array('id' => $client->getId()));
         }
 
-        return $this->render('client/new.html.twig', array(
+        return $this->render('@Dressme/Dressme/client/new.html.twig', array(
             'client' => $client,
             'form' => $form->createView(),
         ));
@@ -61,14 +54,12 @@ class ClientController extends Controller
     /**
      * Finds and displays a client entity.
      *
-     * @Route("/{id}", name="client_show")
-     * @Method("GET")
      */
     public function showAction(Client $client)
     {
         $deleteForm = $this->createDeleteForm($client);
 
-        return $this->render('client/show.html.twig', array(
+        return $this->render('@Dressme/Dressme/client/show.html.twig', array(
             'client' => $client,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -77,8 +68,6 @@ class ClientController extends Controller
     /**
      * Displays a form to edit an existing client entity.
      *
-     * @Route("/{id}/edit", name="client_edit")
-     * @Method({"GET", "POST"})
      */
     public function editAction(Request $request, Client $client)
     {
@@ -89,10 +78,10 @@ class ClientController extends Controller
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('client_edit', array('id' => $client->getId()));
+            return $this->redirectToRoute('clients');
         }
 
-        return $this->render('client/edit.html.twig', array(
+        return $this->render('@Dressme/Dressme/client/edit.html.twig', array(
             'client' => $client,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
@@ -102,21 +91,17 @@ class ClientController extends Controller
     /**
      * Deletes a client entity.
      *
-     * @Route("/{id}", name="client_delete")
-     * @Method("DELETE")
      */
     public function deleteAction(Request $request, Client $client)
     {
-        $form = $this->createDeleteForm($client);
-        $form->handleRequest($request);
-
-        if ($form->isSubmitted() && $form->isValid()) {
+       
+       
             $em = $this->getDoctrine()->getManager();
             $em->remove($client);
             $em->flush();
-        }
+        
 
-        return $this->redirectToRoute('client_index');
+        return $this->redirectToRoute('clients');
     }
 
     /**
