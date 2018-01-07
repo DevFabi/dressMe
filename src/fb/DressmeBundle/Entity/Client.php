@@ -91,8 +91,7 @@ class Client
     private $photo;
 
 public function __toString() {
-    return $this->prenom;
-    return $this->nom;
+    return $this->nom .' '. $this->prenom;
 }
 
     /**

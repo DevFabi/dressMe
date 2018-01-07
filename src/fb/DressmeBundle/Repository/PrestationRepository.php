@@ -18,5 +18,10 @@ class PrestationRepository extends \Doctrine\ORM\EntityRepository
             )
             ->getResult();
     }
+    public function counter() {
+        $qb = $this->createQueryBuilder('p')
+        ->select('COUNT(p)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 
 }

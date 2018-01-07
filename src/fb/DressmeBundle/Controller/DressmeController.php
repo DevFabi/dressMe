@@ -19,7 +19,7 @@ class DressmeController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('DressmeBundle:Dressme:index.html.twig');
+
     }
         public function loginAction()
     {
@@ -27,7 +27,17 @@ class DressmeController extends Controller
     }
         public function homeAction()
     {
-        return $this->render('DressmeBundle:Dressme:home.html.twig');
+        $em = $this->getDoctrine()->getManager();
+        $entitiesLengthC = $em->getRepository('DressmeBundle:Client')->counter();
+        $entitiesLengthF = $em->getRepository('DressmeBundle:Fiche')->counter();
+        $entitiesLengthE = $em->getRepository('DressmeBundle:Encaissement')->counter();
+        $entitiesLengthE = $em->getRepository('DressmeBundle:Encaissement')->counter();
+        $entitiesLengthP = $em->getRepository('DressmeBundle:Prestation')->counter();
+        return $this->render('DressmeBundle:Dressme:home.html.twig', array(
+            'entitiesLengthC' => $entitiesLengthC,
+            'entitiesLengthF' => $entitiesLengthF,
+            'entitiesLengthE' => $entitiesLengthE,
+            'entitiesLengthP' => $entitiesLengthP ));
     }
         public function profilAction()
     {

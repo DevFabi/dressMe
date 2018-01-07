@@ -18,4 +18,9 @@ class FicheRepository extends \Doctrine\ORM\EntityRepository
             )
             ->getResult();
     }
+    public function counter() {
+        $qb = $this->createQueryBuilder('f')
+        ->select('COUNT(f)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }

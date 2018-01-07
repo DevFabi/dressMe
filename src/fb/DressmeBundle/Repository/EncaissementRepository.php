@@ -18,4 +18,18 @@ class EncaissementRepository extends \Doctrine\ORM\EntityRepository
             )
             ->getResult();
     }
+    public function counter() {
+        $qb = $this->createQueryBuilder('e')
+        ->select('COUNT(e)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
+
+        public function counterPrix() {
+        $qb = $this->createQueryBuilder('e')
+        ->select('e')
+        ->leftJoin('e.prestation', 'ep')
+        ->addSelect('ep')
+        ->addSelect('SUM(ep.prix)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }

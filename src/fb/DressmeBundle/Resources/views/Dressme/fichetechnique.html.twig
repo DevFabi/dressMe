@@ -12,6 +12,10 @@
   text-align: center;
   text-decoration: bold;
 }
+.modal-header{
+  background-color: #ECB771;
+  color: white;
+}
 
 </style>
 <br>
@@ -84,7 +88,7 @@ $(document).ready(function(){
 				        {% endfor %}
 				       <td>
                 <a href="{{ path('fiche_show', { 'id': fiche.id }) }}"><button type="button" class="btn btn-primary">Voir</button></a>
-                <a href="{{ path('fiche_edit', { 'id': fiche.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+                <a href="{{ path('fiche_edit', { 'id': fiche.id }) }}"><button type="button" class="btn btn-fiche">Modifier</button></a>
                 <a href="{{ path('fiche_delete', { 'id': fiche.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a></td>
 
 				      </tr>

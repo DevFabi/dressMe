@@ -18,4 +18,10 @@ class ClientRepository extends \Doctrine\ORM\EntityRepository
             )
             ->getResult();
     }
+
+    public function counter() {
+        $qb = $this->createQueryBuilder('c')
+        ->select('COUNT(c)');
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }

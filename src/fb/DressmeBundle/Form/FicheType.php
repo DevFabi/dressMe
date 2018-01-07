@@ -23,7 +23,12 @@ class FicheType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-        ->add('client')
+        ->add('client', EntityType::class , array(
+            'class' => 'DressmeBundle:Client',
+            'choice_label' => function($client) {
+            return $client->getNom() . "  " . $client->getPrenom();},
+            'placeholder' => 'Choisissez ...'))
+           
         ->add('date',DateType::class, array(
     'widget' => 'single_text'))
         ->add('text', TextareaType::class)

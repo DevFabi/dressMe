@@ -16,13 +16,74 @@
         <link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}" />
 
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <style type="text/css">
+        .card-list {
+  margin-top: 15px;
+  width: 100%;
+}
+.card-list:before,
+.card-list:after {
+  content: " ";
+  display: table;
+}
+.card-list:after {
+  clear: both;
+}
+.card {
+  
+  border-radius: 5px;
+  color: white;
+  float: left;
+  padding: 10px;
+  position: relative;
+  width: 25%;
+}
+.card .glyphicon {
+  color: white;
+  font-size: 28px;
+  opacity: 0.4;
+  position: absolute;
+  right: 13px;
+  top: 13px;
+}
+.card .stat {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 8px;
+  margin-top: 25px;
+  padding: 10px 10px 0;
+  text-transform: uppercase;
+}
+.card .title {
+  display: inline-block;
+  font-size: 12px;
+  padding: 5px 5px 0;
+  text-transform: uppercase;
+}
+.card .value {
+  font-size: 28px;
+  padding: 0 10px;
+}
+.card.blue {
+  background-color: #AFD676;
+}
+.card.green {
+  background-color: #F785A5;
+}
+.card.orange {
+  background-color: #9BB1E9;
+}
+.card.red {
+  background-color: #ECB771;
+}
+    </style>
   {% endblock %}
 
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 <body class="home">
     <div class="container-fluid display-table">
         <div class="row display-table-row">
-            <div class="col-md-2 col-sm-1 hidden-xs display-table-cell v-align box" id="navigation">
+            <div class="col-md-2 col-sm-1 col-xs-1 display-table-cell v-align box" id="navigation">
                 <div class="logo">
                     <a hef="home.html">
                     </a>
@@ -34,49 +95,48 @@
                         <li class="hov_pres"><a href="{{ path('prestations') }}"><i class="fa fa-tasks" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Prestations</span></a></li>
                         <li class="hov_enc"><a href="{{ path('encaissement') }}"><i class="fa fa-calendar" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Encaissements</span></a></li>
                         <li class="hov_fi"><a href="{{ path('fichetechnique') }}"><i class="fa fa-bar-chart" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Fiches technique</span></a></li>
-                        <li class="hov_stat"><a href="{{ path('client_new') }}"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
+                        <li class="hov_stat"><a href="#"><i class="fa fa-cog" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Setting</span></a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-10 col-sm-11 display-table-cell v-align">
+            <div class="container-fluid">
+            <div class="col-md-10 col-sm-10 col-xs-10 ">
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
 
-                <div class="user-dashboard">
+               
                 	  {% block body %}
                    
-                </div>
+<h1 style="text-align: center;">Statistiques</h1>
+<div class="container card-list">
+  <div class="card blue">
+    <div class="title">Clients</div><span class="glyphicon glyphicon-user"></span>
+    <div class="value">{{ entitiesLengthC }}</div>
+  </div>
+  <div class="card green">
+    <div class="title">Prestations</div><span class="glyphicon glyphicon-scissors"></span>
+    <div class="value">{{ entitiesLengthP }}</div>
+  </div>
+  <div class="card orange">
+    <div class="title">Encaissements</div><span class="glyphicon glyphicon-tag"></span>
+    <div class="value">{{ entitiesLengthE }}</div>
+  </div>
+  <div class="card red">
+    <div class="title">Fiches techniques</div><span class="glyphicon glyphicon-file"></span>
+    <div class="value">{{ entitiesLengthF }}</div>
+  </div>
+</div>
+               
+
+             
    {% endblock %}
             </div>
+                </div> 
         </div>
 
     </div>
 
 
 
-    <!-- Modal -->
-    <div id="add_project" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-                <div class="modal-header login-header">
-                    <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h4 class="modal-title">Add Project</h4>
-                </div>
-                <div class="modal-body">
-                            <input type="text" placeholder="Project Title" name="name">
-                            <input type="text" placeholder="Post of Post" name="mail">
-                            <input type="text" placeholder="Author" name="passsword">
-                            <textarea placeholder="Desicrption"></textarea>
-                    </div>
-                <div class="modal-footer">
-                    <button type="button" class="cancel" data-dismiss="modal">Close</button>
-                    <button type="button" class="add-project" data-dismiss="modal">Save</button>
-                </div>
-            </div>
-
-        </div>
-    </div>
 
 </body>
 
@@ -95,6 +155,30 @@
    });
 });
 
-      
+      $('.counter').each(function() {
+  var $this = $(this),
+      countTo = $this.attr('data-count');
+  
+  $({ countNum: $this.text()}).animate({
+    countNum: countTo
+  },
+
+  {
+
+    duration: 800,
+    easing:'linear',
+    step: function() {
+      $this.text(Math.floor(this.countNum));
+    },
+    complete: function() {
+      $this.text(this.countNum);
+      //alert('finished');
+    }
+
+  });  
+  
+  
+
+});
 
         </script>
