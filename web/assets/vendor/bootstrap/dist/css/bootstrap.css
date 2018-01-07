@@ -3170,6 +3170,37 @@ fieldset[disabled] .btn-primary.focus {
   color: #337ab7;
   background-color: #fff;
 }
+.btn-client {
+    background-color: #AFD676;
+    color: white ;
+    border-color: #AFD676;
+}
+.btn-client:hover {
+    background-color: #AFD676;
+    color: white ;
+    border-color: #AFD676;
+}
+.btn-client:focus,
+.btn-client.focus {
+    background-color: #AFD676;
+    color: white ;
+    border-color: #AFD676; }
+
+.btn-prestation {
+    background-color: #F785A5;
+    color: white ;
+    border-color: #F785A5;
+}
+.btn-encaissement {
+    background-color: #9BB1E9;
+    color: white ;
+    border-color: #9BB1E9;
+}
+.btn-fiche {
+    background-color: #ECB771;
+    color: white ;
+    border-color: #ECB771;
+}
 .btn-success {
   color: #fff;
   background-color: #5cb85c;

@@ -23,6 +23,8 @@ class EncaissementType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        ->add('date',DateType::class, array(
+    'widget' => 'single_text'))
         ->add('client')
         ->add('prestation')
         ->add('modePayement')

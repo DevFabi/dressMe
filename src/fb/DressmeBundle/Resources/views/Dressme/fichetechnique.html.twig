@@ -6,13 +6,19 @@
 .tab {
 	background-color: white;
 }
+#tab2 {
+ 
+  color: #ECB771;
+  text-align: center;
+  text-decoration: bold;
+}
 
 </style>
 <br>
 <div class="row">
 <div class="col-sm-4 col-xs-2"></div>
 <!--  BOUTON AJOUTER Fiche: Ouvre un modal -->
-<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#ajoutFiche">+ Ajouter une fiche</button></div>
+<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-fiche btn-block btn-lg" data-toggle="modal" data-target="#ajoutFiche">+ Ajouter une fiche</button></div>
 
 <!-- MODAL AJOUTER Fiche -->
 <div id="ajoutFiche" class="modal fade" role="dialog">
@@ -53,12 +59,12 @@ $(document).ready(function(){
 </div> <br><br>
 <div class="tab">
 <div class="container">
-	
+	<h2 id="tab2">Liste des fiches techniques</h2>
 		<div class="col-xs-12 col-sm-12 col-md-12 ">
 			<div class="table-responsive">
 				
 			  <table class="table">
-			  	<input id="myInput" type="text" placeholder="Rechercher..">
+			  	<label id="tab2">Recherche : </label> <input id="myInput" class="form-control" type="text" placeholder="Par nom, date..">
 			        <thead>
 				      <tr>
 				        <th>id</th>
@@ -72,12 +78,14 @@ $(document).ready(function(){
        
 				      <tr>
 				        <td>{{ fiche.id }}</td>
-				        <td>{{ fiche.date|date('Y-m-d') }}</td>
+				        <td>{{ fiche.date|date('d-m-Y') }}</td>
 				        {% for fiche in fiche.client %}
 				        <td>{{ fiche.nom }} {{ fiche.prenom }}</td>
 				        {% endfor %}
-				        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#voirFiche">Voir</button>
-<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerFiche">Supprimer</button></td>
+				       <td>
+                <a href="{{ path('fiche_show', { 'id': fiche.id }) }}"><button type="button" class="btn btn-primary">Voir</button></a>
+                <a href="{{ path('fiche_edit', { 'id': fiche.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+                <a href="{{ path('fiche_delete', { 'id': fiche.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a></td>
 
 				      </tr>
 				      {% endfor %}

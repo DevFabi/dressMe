@@ -7,13 +7,20 @@
 .tab {
 	background-color: white;
 }
+#tab2 {
+ 
+  color: #9BB1E9;
+  text-align: center;
+  text-decoration: bold;
+}
+
 
 </style>
-
+<br>
  <div class="row">
 <div class="col-sm-4 col-xs-2"></div>
 <!--  BOUTON AJOUTER CLIENT: Ouvre un modal -->
-<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#newEnc">+ Encaisser</button></div></div>
+<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-encaissement btn-block btn-lg" data-toggle="modal" data-target="#newEnc">+ Encaisser</button></div></div>
 
 <!-- MODAL NOUVEL ENCAISSEMENT -->
 <div id="newEnc" class="modal fade" role="dialog">
@@ -30,6 +37,7 @@
 
  	 {{ form_start(form) }}
 
+  
 
 	<div class="form-groupe">
 	<div class="label-style">{{ form_label(form.client, 'Selection du client') }}</div>
@@ -58,7 +66,17 @@
 <!-- FIN DU MODALNOUVEL ENCAISSEMENT -->
 <br><br>
 
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 <div class="col-sm-4 col-xs-4"></div>
 </div> <br><br>
 <div class="tab">
@@ -66,12 +84,13 @@
 	
 		<div class="col-xs-12 col-sm-12 col-md-12 ">
 
-<h2>Liste des encaissements</h2>
+<h2 id="tab2">Liste des encaissements</h2>
 			<div class="table-responsive">
 			  <table class="table">
+          <label id="tab2">Recherche : </label> <input id="myInput" class="form-control" type="text" placeholder="Par nom, date, moyen de payement, prestation..">
 			        <thead>
 				      <tr>
-				        <th>id</th>
+				        <th>Date</th>
 				        <th>Nom</th>
 				        <th>Prestations</th>
 				        <th>Prix</th>
@@ -80,11 +99,11 @@
 				        
 				      </tr>
 				    </thead>
-				    <tbody>
+				    <tbody id="myTable">
 			 {% for encaissement in encaissement %}
        
               <tr>
-                <td>{{ encaissement.id }}</td>
+                <td>{{ encaissement.date|date('d-m-Y') }}</td>
                 {% for encaissement in encaissement.client %}
                 <td>{{ encaissement.nom }} {{ encaissement.prenom }}</td>
                 {% endfor %}
@@ -97,13 +116,14 @@
                 {% endfor %}
                 <td>
 
-<td><a href="{{ path('encaissement_edit', { 'id': encaissement.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+<td><a href="{{ path('encaissement_edit', { 'id': encaissement.id }) }}"><button type="button" class="btn btn-encaissement">Modifier</button></a>
 
 <a href="{{ path('encaissement_delete', { 'id': encaissement.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a></td>
 
 
 {% endfor %}
 				      </tr>
+
 <!-- MODAL MODIFICATION CLIENT -->
 <div id="modifierEnc" class="modal fade" role="dialog">
   <div class="modal-dialog">

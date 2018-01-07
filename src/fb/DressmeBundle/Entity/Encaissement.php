@@ -20,6 +20,7 @@ class Encaissement
         $this->modepayement = new ArrayCollection();
         $this->client = new ArrayCollection();
         $this->prestation = new ArrayCollection();
+        $this->date = new \Datetime();
   }
 
     /**
@@ -44,6 +45,13 @@ class Encaissement
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
 
 
     /**
@@ -156,5 +164,29 @@ class Encaissement
     public function getClient()
     {
         return $this->client;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     *
+     * @return Encaissement
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime
+     */
+    public function getDate()
+    {
+        return $this->date;
     }
 }

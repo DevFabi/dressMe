@@ -96,3 +96,28 @@ encaissement_delete:
     path:     /encaissement/{id}/delete
     defaults: { _controller: "DressmeBundle:Encaissement:delete" }
     methods:  GET
+    
+fiche_index:
+    path:     /fiche/
+    defaults: { _controller: "DressmeBundle:Fiche:index" }
+    methods:  GET
+
+fiche_show:
+    path:     /fiche/{id}/show
+    defaults: { _controller: "DressmeBundle:Fiche:show" }
+    methods:  GET
+
+fiche_new:
+    path:     /fiche/new
+    defaults: { _controller: "DressmeBundle:Fiche:new" }
+    methods:  [GET, POST]
+
+fiche_edit:
+    path:     /fiche/{id}/edit
+    defaults: { _controller: "DressmeBundle:Fiche:edit" }
+    methods:  [GET, POST]
+
+fiche_delete:
+    path:     /fiche/{id}/delete
+    defaults: { _controller: "DressmeBundle:Fiche:delete" }
+    methods:  GET

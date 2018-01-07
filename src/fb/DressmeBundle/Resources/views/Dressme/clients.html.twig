@@ -9,13 +9,21 @@
 .tab {
 	background-color: white;
 }
+#tab2 {
+ 
+  color: #AFD676;
+  text-align: center;
+  text-decoration: bold;
+}
 
 </style>
 <br>
+
 <div class="row">
 <div class="col-sm-4 col-xs-2"></div>
 <!--  BOUTON AJOUTER CLIENT: Ouvre un modal -->
-<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-primary btn-block btn-lg" data-toggle="modal" data-target="#ajoutClient">+ Ajouter un client</button></div></div>
+<div class="col-sm-4 col-xs-6"><button type="button" class="btn btn-client btn-block btn-lg" data-toggle="modal" data-target="#ajoutClient">+ Ajouter un client</button></div></div>
+ <br>
 
 <!-- MODAL AJOUTER CLIENT -->
 <div id="ajoutClient" class="modal fade" role="dialog">
@@ -54,15 +62,28 @@
   </div>
 </div>
 <!-- FIN DU MODAL AJOUTER CLIENT -->
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 <div class="col-sm-4 col-xs-4"></div>
 </div> <br><br>
+
 <div class="tab">
 <div class="container">
-	
+
+	 <h2 id="tab2">Liste des clients</h2><br>
 		<div class="col-xs-12 col-sm-12 col-md-12 ">
 			<div class="table-responsive">
 			  <table class="table">
+                    <label id="tab2">Recherche : </label> <input id="myInput" class="form-control" type="text" placeholder="Par nom, prénom..">
 			        <thead>
 				      <tr>
 				        <th>id</th>
@@ -72,7 +93,7 @@
 				        <th>Action</th>
 				      </tr>
 				    </thead>
-				    <tbody>
+				    <tbody id="myTable">
 				       {% for client in client %}
        
               <tr>
@@ -80,10 +101,10 @@
                 <td>{{ client.nom }}</td>
                 <td>{{ client.prenom }}</td>
                 <!-- <td></td> -->
-                <td><a href="{{ path('client_edit', { 'id': client.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+                <td><a href="{{ path('client_edit', { 'id': client.id }) }}"><button type="button" class="btn btn-client">Modifier</button></a>
 
 <a href="{{ path('client_delete', { 'id': client.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a>
-<a href="{{ path('fichetechnique') }}"><button type="button" class="btn btn-primary ">Fiche technique</button></a></td>
+<a href="{{ path('fichetechnique') }}"><button type="button" class="btn btn-fiche ">Fiche technique</button></a></td>
 {% endfor %}
 				      </tr>
 <!-- MODAL MODIFICATION CLIENT -->
@@ -154,8 +175,9 @@
 				    </tbody>
 			  </table>
 			</div>
-		</div>
+		
 	
+</div>
 </div>
 </div>
 

@@ -3,6 +3,8 @@
 namespace fb\DressmeBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
+
 
 /**
  * Encaissement
@@ -42,6 +44,13 @@ class Encaissement
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date")
+     */
+    private $date;
 
 
     /**
@@ -86,5 +95,73 @@ class Encaissement
     public function getModePayement()
     {
         return $this->modePayement;
+    }
+
+    /**
+     * Add prestation
+     *
+     * @param \fb\DressmeBundle\Entity\Prestation $prestation
+     *
+     * @return Encaissement
+     */
+    public function addPrestation(\fb\DressmeBundle\Entity\Prestation $prestation)
+    {
+        $this->prestation[] = $prestation;
+
+        return $this;
+    }
+
+    /**
+     * Remove prestation
+     *
+     * @param \fb\DressmeBundle\Entity\Prestation $prestation
+     */
+    public function removePrestation(\fb\DressmeBundle\Entity\Prestation $prestation)
+    {
+        $this->prestation->removeElement($prestation);
+    }
+
+    /**
+     * Get prestation
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getPrestation()
+    {
+        return $this->prestation;
+    }
+
+    /**
+     * Add client
+     *
+     * @param \fb\DressmeBundle\Entity\Client $client
+     *
+     * @return Encaissement
+     */
+    public function addClient(\fb\DressmeBundle\Entity\Client $client)
+    {
+        $this->client[] = $client;
+
+        return $this;
+    }
+
+    /**
+     * Remove client
+     *
+     * @param \fb\DressmeBundle\Entity\Client $client
+     */
+    public function removeClient(\fb\DressmeBundle\Entity\Client $client)
+    {
+        $this->client->removeElement($client);
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getClient()
+    {
+        return $this->client;
     }
 }

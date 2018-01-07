@@ -1,0 +1,35 @@
+
+{% extends "DressmeBundle:Dressme:home.html.twig" %}
+
+
+{% block body %}
+
+
+<div class="tab">
+<div class="container">
+    <a href="{{ path('fichetechnique') }}"><button type="button" class="btn btn-primary">Retour</button></a>
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+<div class="modal-body">
+    <h1>Modification de la fiche technique</h1>
+
+ {{ form_start(edit_form) }}
+	<div class="label-style">{{ form_label(edit_form.client, 'Selection du client') }}</div>
+	{{ form_widget(edit_form.client, {'attr':{'class':'form-control'}}) }}
+	{{ form_errors(edit_form.client) }}
+
+
+  <div class="form-groupe">
+  {{ form_widget(edit_form ) }}
+  {{ form_errors(edit_form) }}
+
+    {{ form_end(edit_form) }}
+
+  
+             
+       </div>
+       
+       </div>
+
+</div></div></div>
+{% endblock %}
+

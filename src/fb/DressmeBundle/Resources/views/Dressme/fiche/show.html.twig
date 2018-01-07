@@ -1,0 +1,43 @@
+
+{% extends "DressmeBundle:Dressme:home.html.twig" %}
+
+{% block body %}
+
+<style type="text/css">
+
+.fichebody {
+    background-color: white;
+    padding: 20px;
+}
+    
+</style>
+
+<div class="tab">
+    <div class="container">
+        <div class="col-xs-12 col-sm-12 col-md-12 ">
+            {% for fiche in fiche.client %}
+      <h1>Fiche de {{ fiche.nom }} {{ fiche.prenom }}</h1>
+{% endfor %}
+    
+                <div class="fichebody">
+            
+                <h4>Date : </h4> 
+                {% if fiche.date %}{{ fiche.date|date('d-m-Y') }}{% endif %} <br><br>
+            
+                <h4>Contenu :</h4> 
+                {{ fiche.text }} 
+
+                </div>
+
+
+            <br>
+        
+
+        <a href="{{ path('fichetechnique') }}"><button type="button" class="btn btn-primary">Retour</button></a>
+        <a href="{{ path('fiche_edit', { 'id': fiche.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+        <a href="{{ path('fiche_delete', { 'id': fiche.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a>
+         </div>
+    </div>
+</div>
+    
+{% endblock %}

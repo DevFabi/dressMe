@@ -246,7 +246,7 @@ ul {
     }
     #navigation .navi a:hover,
     #navigation .navi .active a {
-        background: #122143 none repeat scroll 0 0;
+        background: #293847 none repeat scroll 0 0;
         border-left: none;
         display: block;
         padding-left: 20px;
@@ -533,7 +533,7 @@ li,ul{
 }
 
 #navigation {
-    background: #0e1a35;
+    background: #293847;
 }
 
 #navigation {
@@ -705,28 +705,61 @@ header {
     border-top: 1px solid #0d172e;
     color: #ffffff;
     display: block;
-    font-size: 17px;
+    font-size: 20px;
     font-weight: 500;
     padding: 28px 20px;
     text-decoration: none;
 }
 
 .navi i {
-    margin-right: 15px;
-    color: #5584ff;
+    margin-right: 10px;
+    color: white;
 }
 
 .navi .active a {
     background: #122143;
-    border-left: 5px solid #5584ff;
     padding-left: 15px;
 }
 
-.navi a:hover {
-    background: #122143 none repeat scroll 0 0;
-    border-left: 5px solid #5584ff;
+.navi .hov_cli a:hover {
+    background: #AFD676 none repeat scroll 0 0;
+    border-left: 5px solid white;
     display: block;
     padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+.navi .hov_pres a:hover {
+    background: #F785A5 none repeat scroll 0 0;
+    border-left: 4px solid white;
+    display: block;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+.navi .hov_enc a:hover {
+    background: #9BB1E9 none repeat scroll 0 0;
+    border-left: 5px solid white;
+    display: block;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+.navi .hov_fi a:hover {
+    background: #ECB771 none repeat scroll 0 0;
+    border-left: 5px solid white;
+    display: block;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
+}
+.navi .hov_stat a:hover {
+    background: #B884D1 none repeat scroll 0 0;
+    border-left: 5px solid white;
+    display: block;
+    padding-left: 15px;
+    text-decoration: none;
+    color: white;
 }
 
 .navbar-default {
@@ -1046,4 +1079,10 @@ header {
     padding: 16px 0 17px;
     width: 100%;
 }
+}
+
+.btn-client {
+    background-color: #AFD676;
+    color: white ;
+    border-color: #AFD676;
 }
