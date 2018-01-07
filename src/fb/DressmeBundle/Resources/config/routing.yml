@@ -71,3 +71,28 @@ prestation_delete:
     path:     /prestation/{id}/delete
     defaults: { _controller: "DressmeBundle:Prestation:delete" }
     methods:  GET
+    
+encaissement_index:
+    path:     /encaissement/
+    defaults: { _controller: "DressmeBundle:Encaissement:index" }
+    methods:  GET
+
+encaissement_show:
+    path:     /encaissement/{id}/show
+    defaults: { _controller: "DressmeBundle:Encaissement:show" }
+    methods:  GET
+
+encaissement_new:
+    path:     /encaissement/new
+    defaults: { _controller: "DressmeBundle:Encaissement:new" }
+    methods:  [GET, POST]
+
+encaissement_edit:
+    path:     /encaissement/{id}/edit
+    defaults: { _controller: "DressmeBundle:Encaissement:edit" }
+    methods:  [GET, POST]
+
+encaissement_delete:
+    path:     /encaissement/{id}/delete
+    defaults: { _controller: "DressmeBundle:Encaissement:delete" }
+    methods:  GET

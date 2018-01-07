@@ -95,8 +95,13 @@
                 {% for encaissement in encaissement.modePayement %}
                 <td>{{ encaissement.libelle }} </td>
                 {% endfor %}
-                <td><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modifierEnc">Modifier</button>
-<button type="button" class="btn btn-danger " data-toggle="modal" data-target="#supprimerEnc">Supprimer</button></td>
+                <td>
+
+<td><a href="{{ path('encaissement_edit', { 'id': encaissement.id }) }}"><button type="button" class="btn btn-warning">Modifier</button></a>
+
+<a href="{{ path('encaissement_delete', { 'id': encaissement.id }) }}"><button type="button" class="btn btn-danger ">Supprimer</button></a></td>
+
+
 {% endfor %}
 				      </tr>
 <!-- MODAL MODIFICATION CLIENT -->

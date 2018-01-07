@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Encaissements list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for encaissement in encaissements %}
+            <tr>
+                <td><a href="{{ path('encaissement_show', { 'id': encaissement.id }) }}">{{ encaissement.id }}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('encaissement_show', { 'id': encaissement.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('encaissement_edit', { 'id': encaissement.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('encaissement_new') }}">Create a new encaissement</a>
+        </li>
+    </ul>
+{% endblock %}
