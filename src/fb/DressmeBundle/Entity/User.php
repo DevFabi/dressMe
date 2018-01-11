@@ -1,10 +1,11 @@
 <?php
-namespace DressmeBundle\Entity;
+
+namespace fb\DressmeBundle\Entity;
 use FOS\UserBundle\Model\User as FosUser;
 use Doctrine\ORM\Mapping as ORM;
+
 /**
  * User
- *
  * @ORM\Table(name="user")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
  */
@@ -18,6 +19,8 @@ class User extends FosUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+
     /**
      * Get id
      *
@@ -27,8 +30,10 @@ class User extends FosUser
     {
         return $this->id;
     }
-    public function __construct()
+
+     public function __construct()
     {
         parent::__construct();
     }
 }
+

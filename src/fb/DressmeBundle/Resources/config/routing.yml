@@ -121,3 +121,7 @@ fiche_delete:
     path:     /fiche/{id}/delete
     defaults: { _controller: "DressmeBundle:Fiche:delete" }
     methods:  GET
+
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

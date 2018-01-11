@@ -1,0 +1,11 @@
+fb\DressmeBundle\Entity\User:
+    type: entity
+    table: null
+    repositoryClass: fb\DressmeBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    lifecycleCallbacks: {  }
