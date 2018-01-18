@@ -25,6 +25,7 @@ class FicheType extends AbstractType
         $builder
         ->add('client', EntityType::class , array(
             'class' => 'DressmeBundle:Client',
+            'multiple' => 'true',
             'choice_label' => function($client) {
             return $client->getNom() . "  " . $client->getPrenom();},
             'placeholder' => 'Choisissez ...'))

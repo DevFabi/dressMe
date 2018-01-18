@@ -84,3 +84,4 @@ fos_user:
                 address: noreply@monsiteweb.com
                 sender_name: Admin du Tuto FOSUserBundle
             template: 'email/registration.email.twig'
+

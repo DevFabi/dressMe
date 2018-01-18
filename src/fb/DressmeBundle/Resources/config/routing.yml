@@ -122,6 +122,10 @@ fiche_delete:
     defaults: { _controller: "DressmeBundle:Fiche:delete" }
     methods:  GET
 
+event:
+    path:     /event/
+    defaults: { _controller: "DressmeBundle:Default:event" }
+    methods:  GET
 
-fos_user:
-    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+ancarebeca_fullcalendar:
+    resource: "@FullCalendarBundle/Resources/config/routing.yml"    

@@ -1,0 +1,20 @@
+{
+  "name": "dressme",
+  "homepage": "https://github.com/DevFabi/dressMe",
+  "authors": [
+    "fbelet <fabiola.belet@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "^2.20.1"
+  }
+}
