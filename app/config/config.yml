@@ -75,3 +75,12 @@ fos_user:
     from_email:
         address: fabibelet@gmail.com
         sender_name: "FabiUserBundle"
+    service:
+        mailer: fos_user.mailer.twig_swift
+    registration:
+        confirmation:
+            enabled: true
+            from_email:
+                address: noreply@monsiteweb.com
+                sender_name: Admin du Tuto FOSUserBundle
+            template: 'email/registration.email.twig'
