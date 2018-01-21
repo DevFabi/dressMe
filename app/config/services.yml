@@ -33,7 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+
     app_bundle.service.listener:
-        class: fb\DressmeBundle\Listener\LoadDataListener
+        class: AppBundle\EventListener\LoadDataListener
+        arguments: [ "@doctrine.orm.entity_manager" ]
         tags:
-                - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadData }
+            - { name: 'kernel.event_listener', event: 'fullcalendar.set_data', method: loadData }

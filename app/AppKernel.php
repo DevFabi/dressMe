@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new fb\DressmeBundle\DressmeBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new AncaRebeca\FullCalendarBundle\FullCalendarBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

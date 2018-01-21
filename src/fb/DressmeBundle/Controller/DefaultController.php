@@ -10,8 +10,5 @@ class DefaultController extends Controller
     {
         return $this->render('DressmeBundle:index.html.twig');
     }
-    public function eventAction()
-    {
-        return $this->render('DressmeBundle:event.html.twig');
-    }
+
 }

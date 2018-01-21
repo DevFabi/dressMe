@@ -126,6 +126,3 @@ event:
     path:     /event/
     defaults: { _controller: "DressmeBundle:Default:event" }
     methods:  GET
-
-ancarebeca_fullcalendar:
-    resource: "@FullCalendarBundle/Resources/config/routing.yml"    
