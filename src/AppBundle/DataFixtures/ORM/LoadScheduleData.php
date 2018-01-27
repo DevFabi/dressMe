@@ -7,7 +7,7 @@ class LoadScheduleData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        $schedule = new Schedule();
+        /*$schedule = new Schedule();
         $schedule->setTitle('Yoga class');
         $today = new \DateTime();
         $schedule->setStart($today);
@@ -19,6 +19,6 @@ class LoadScheduleData implements FixtureInterface
         $schedule->setStart($tomorrow);
         $schedule->setEnd($tomorrow);
         $manager->persist($schedule);
-        $manager->flush();
+        $manager->flush();*/
     }
 }

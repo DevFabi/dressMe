@@ -9,6 +9,21 @@ app:
 ancarebeca_fullcalendar:
     resource: "@FullCalendarBundle/Resources/config/routing.yml"
 
-homepage:
+rdv:
     path:     /rdv
     defaults: { _controller: AppBundle:Default:index}
+
+appBundle_drop:
+    path:     /rdv/drop
+    defaults: { _controller: AppBundle:Default:dropEvent }
+    methods:  [GET, POST]
+
+appBundle_delete:
+    path:     /rdv/delete
+    defaults: { _controller: AppBundle:Index:deleteEvent }
+    methods:  [GET, POST]
+ 
+appBundle_editEvent:
+    path:     /rdv/edit/title
+    defaults: { _controller: AppBundle:Index:editEvent }
+    methods:  [GET, POST]

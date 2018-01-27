@@ -36,6 +36,11 @@ class Schedule
      */
     private $end;
     /**
+     * @var string
+     * @ORM\Column(name="background", type="string")
+     */
+    private $backgroundColor;
+    /**
      * Get id
      *
      * @return int
@@ -92,5 +97,20 @@ class Schedule
     public function setEnd($end)
     {
         $this->end = $end;
+    }
+    /**
+     * @return string
+     */
+    public function getBackgroundColor()
+    {
+        return $this->backgroundColor;
+    }
+
+    /**
+     * @param string $backgroundColor
+     */
+    public function setBackgroundColor($backgroundColor)
+    {
+        $this->backgroundColor = $backgroundColor;
     }
 }
