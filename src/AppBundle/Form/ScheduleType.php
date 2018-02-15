@@ -23,14 +23,15 @@ class ScheduleType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('title')
-        ->add('start', DateTimeType::class, array(
+        $builder->add('title',TextType::class, array('label'=> 'Nom evênement'))
+        ->add('start',  DateTimeType::class, array('label'=> 'Date début'
               ))
 
         ->add('end', DateTimeType::class, array(
+            'label'=> 'Date fin'
               ))
 
-        ->add('backgroundColor')
+        
         ->add('Valider',   SubmitType::class);
     }
     

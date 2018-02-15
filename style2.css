@@ -1,0 +1,218 @@
+
+
+@font-face {
+    font-family: 'great_vibesregular';
+  
+  src: url('sitesite/fonts/greatvibes-regular-webfont.eot');
+    
+src: url('fonts/greatvibes-regular-webfont.eot?#iefix') format('embedded-opentype'),
+url('sitesite/fonts/greatvibes-regular-webfont.woff2') format('woff2'),
+url('sitesite/fonts/greatvibes-regular-webfont.woff') format('woff'),
+url('sitesite/fonts/greatvibes-regular-webfont.ttf') format('truetype'),
+url('sitesite/fonts/greatvibes-regular-webfont.svg#great_vibesregular') 
+format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'densia_sansregular';
+    src: url('fonts/densiasans-webfont.eot');
+    src: url('fonts/densiasans-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/densiasans-webfont.woff2') format('woff2'),
+         url('fonts/densiasans-webfont.woff') format('woff'),
+         url('fonts/densiasans-webfont.ttf') format('truetype'),
+         url('fonts/densiasans-webfont.svg#densia_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+
+
+
+@font-face {
+    font-family: 'champagne__limousinesregular';
+  
+  src: url('fonts/champagne__limousines-webfont.eot');
+    src: url('fonts/champagne__limousines-webfont.eot?#iefix') format('embedded-opentype'),
+     
+    url('fonts/champagne__limousines-webfont.woff2') format('woff2'),
+         url('fonts/hampagne__limousines-webfont.woff') format('woff'),
+       
+  url('fonts/champagne__limousines-webfont.ttf') format('truetype'),
+         url('fonts/champagne__limousines-webfont.svg#champagne__limousinesregular')
+ format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'milasian_circa_thin_personaRg';
+   
+ src: url('fonts/milasiancircathinpersonal-webfont.eot');
+    src: url('fonts/milasiancircathinpersonal-webfont.eot?#iefix') format('embedded-opentype'),
+  
+       url('fonts/milasiancircathinpersonal-webfont.woff2') format('woff2'),
+         url('fonts/milasiancircathinpersonal-webfont.woff') format('woff'),
+  
+       url('fonts/milasiancircathinpersonal-webfont.ttf') format('truetype'),
+      
+   url('fonts/milasiancircathinpersonal-webfont.svg#milasian_circa_thin_personaRg') format('svg');
+ 
+   font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+/* =Nav
+-------------------------------------------------------------- */
+#nav-trigger {
+  display: none;
+  text-align: center; }
+  #nav-trigger span {
+    display: inline-block;
+    padding: 10px 30px;
+    background-color: #D1F2EB;
+    color: white;
+    cursor: pointer;
+    text-transform: uppercase; }
+    #nav-trigger span:after {
+      display: inline-block;
+      margin-left: 10px;
+      width: 20px;
+      height: 10px;
+      content: "";
+      border-left: solid 10px transparent;
+      border-top: solid 10px #fff;
+      border-right: solid 10px transparent; }
+    #nav-trigger span:hover {
+      background-color: #D1F2EB; }
+    #nav-trigger span.open:after {
+      border-left: solid 10px transparent;
+      border-top: none;
+      border-bottom: solid 10px #fff;
+      border-right: solid 10px transparent; }
+
+nav {
+  margin-bottom: 30px; }
+
+nav#nav-main {
+  background-color: #D1F2EB;
+  padding: 10px 0; }
+  nav#nav-main ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center; }
+  nav#nav-main li {
+    display: inline-block;
+    border-right: solid 1px #eadfdf;
+    padding: 0 5px; }
+    nav#nav-main li:last-child {
+      border-right: none; }
+  nav#nav-main a {
+    display: block;
+    color: black;
+    padding: 10px 30px; 
+	text-decoration:none; 
+	text-transform: uppercase;
+	font-size: 18px;}
+    nav#nav-main a:hover {
+      background-color: #D7EAE0;
+      color: black; }
+
+nav#nav-mobile {
+  position: relative;
+  display: none; }
+  nav#nav-mobile ul {
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background-color: #D1F2EB; }
+  nav#nav-mobile li {
+    display: block;
+    padding: 5px 0;
+    margin: 0 5px;
+    border-bottom: solid 1px #c9e2d0; }
+    nav#nav-mobile li:last-child {
+      border-bottom: none; }
+  nav#nav-mobile a {
+    display: block;
+    color: black;
+    padding: 10px 30px; }
+    nav#nav-mobile a:hover {
+      background-color: #d6c1c0;
+      color: black; }
+
+
+	  
+	  
+
+.col-md-12 p {
+
+text-align:center;}
+
+
+#ocslg {
+text-align:center;
+font-family: 'milasian_circa_thin_personaRg';
+font-size: 42px;
+
+
+}
+
+
+.col-md-6 h1 {
+
+font-family: 'milasian_circa_thin_personaRg';
+text-align: center;
+color: #ADD6C2;
+letter-spacing: 0.1em; }
+
+.col-md-6 p {
+font-family: 'champagne__limousinesregular';
+color: black;
+text-align: center;
+}
+
+
+
+
+
+.modele {
+font-style: italic;
+text-align: center;
+font-size: 12px;
+}
+
+
+
+
+
+
+#Galerie{
+text-align: center;
+color: Black;
+font-size: 80px;
+font-family: 'milasian_circa_thin_personaRg';
+=
+}
+
+
+

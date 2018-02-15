@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>{% block title %}Titre{% endblock %}</title>
+<title>{% block title %}DressMe - Gestionnaire de salon pour auto-entrepreneurs{% endblock %}</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
@@ -104,8 +104,18 @@
 
                
                 	  {% block body %}
-                   
-<h1 style="text-align: center;">Statistiques</h1>
+                        
+<h1 style="text-align: center;">DressMe</h1>              
+<h1 style="text-align: center;">Gestionnaire de salon à domicile</h1>
+<p style="text-align: center;"><img src="{{ asset('assets/vendor/logo.jpg') }}""></p>
+<p style="text-align: center;">Cette application vous aide à gérer facilement votre activité professionnelle à domicile. Vous disposez des outils suivant : </p>
+<h2 style="text-align: center; color: #AFD676;"> Gestion des clients </h2>
+<h2 style="text-align: center; color: #F785A5;"> Gestion des prestations </h2>
+<h2 style="text-align: center; color: #9BB1E9;"> Attribution de fiches techniques </h2>
+<h2 style="text-align: center; color: #ECB771;"> Encaissements </h2>
+<h2 style="text-align: center; color: #B884D1;"> Gestion du planning </h2> <br><br>
+
+<h4 style="text-align: center;"> Statistiques actuelles : </h2>
 <div class="container card-list">
   <div class="card blue">
     <div class="title">Clients</div><span class="glyphicon glyphicon-user"></span>
@@ -124,7 +134,7 @@
     <div class="value">{{ entitiesLengthF }}</div>
   </div>
 </div>
-               
+               <br><br>
 
              
    {% endblock %}

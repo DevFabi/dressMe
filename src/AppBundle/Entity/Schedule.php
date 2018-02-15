@@ -35,11 +35,7 @@ class Schedule
      * @ORM\Column(name="end", type="datetime")
      */
     private $end;
-    /**
-     * @var string
-     * @ORM\Column(name="background", type="string")
-     */
-    private $backgroundColor;
+
     /**
      * Get id
      *
@@ -98,19 +94,5 @@ class Schedule
     {
         $this->end = $end;
     }
-    /**
-     * @return string
-     */
-    public function getBackgroundColor()
-    {
-        return $this->backgroundColor;
-    }
 
-    /**
-     * @param string $backgroundColor
-     */
-    public function setBackgroundColor($backgroundColor)
-    {
-        $this->backgroundColor = $backgroundColor;
-    }
 }

@@ -25,7 +25,7 @@ class DefaultController extends Controller
 $request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
             return $this->redirectToRoute('rdv'); // Redirige vers la page
     }
-        return $this->render('default/index.html.twig', array('form' => $form->createView(), 
+        return $this->render('default/index.html.twig', array('myform' => $form->createView(), 
     ));
 
     }

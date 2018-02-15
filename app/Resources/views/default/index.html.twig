@@ -101,11 +101,33 @@
             <div class="col-md-10 col-sm-10 col-xs-10 ">
                 <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
 
+ <h2 id="tab2">Votre agenda de rendez-vous</h2><br>
+ <p>Enregistrez vos rendez-vous avec vos clients par jour et par horaires. Il est possible de glisser et d'agrandir les rendez-vous avec votre souris directement sur le calendrier.</p>
+
+ <div class=”form-groupe” style="display: inline;"">
+   <div class="row">
+    <div class="col-md-3">
+       {{ form_start(myform)}}
+{{ form_label(myform.title) }}
+{{ form_widget(myform.title, {'attr': {'class' :'form-control'}}) }}
+{{ form_errors(myform.title) }}
+</div>
+<div class="col-md-3">
+{{ form_label(myform.start) }}
+{{ form_widget(myform.start)}}
+{{ form_errors(myform.start) }}
+</div>
+<div class="col-md-3">
+{{ form_label(myform.end) }}
+{{ form_widget(myform.end,  {'attr': {'class' :'datepicker'}})}}
+{{ form_errors(myform.end) }}
+</div>
+<div class="col-md-3">
 
 
- <div class=”form-groupe”>
-  {{ form(form) }}
-  {{ form_rest(form) }}
+ {{ form_rest(myform) }}
+ </div>
+</div>
 </div>
 
    {% include '@FullCalendar/Calendar/calendar.html.twig' %}
@@ -197,7 +219,9 @@
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.default-settings.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/bootstrap-datepicker.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/locale/fr.js') }}"></script>
+
    <script type="text/javascript">
 $(document).ready(function() {
 
@@ -263,7 +287,7 @@ $(document).ready(function() {
         {
             url: '/full-calendar/load',
             type: 'POST',
-            color : 'green',  
+            color : '#E33A70',  
           
         }
                           ]// allow "more" link when too many events
