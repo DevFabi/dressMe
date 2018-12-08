@@ -215,6 +215,7 @@
 {% endblock %}
 
 {% block javascripts %}
+
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/lib/moment.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/fullcalendar.min.js') }}"></script>
@@ -223,6 +224,8 @@
     <script type="text/javascript" src="{{ asset('bundles/fullcalendar/js/fullcalendar/locale/fr.js') }}"></script>
 
    <script type="text/javascript">
+ 
+
 $(document).ready(function() {
 
         $('#calendar').fullCalendar({
@@ -295,6 +298,8 @@ $(document).ready(function() {
 
  
     });
+
+  
  
     $('#deleteButton').on('click', function(e){
         // We don't want this to act as a link so cancel the link action

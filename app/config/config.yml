@@ -72,7 +72,7 @@ swiftmailer:
 fos_user:
     db_driver: orm
     firewall_name: main
-    user_class: fb\DressmeBundle\Entity\User
+    user_class: DressmeBundle\Entity\User
     from_email:
         address: fabibelet@gmail.com
         sender_name: "FabiUserBundle"
@@ -86,3 +86,7 @@ fos_user:
                 sender_name: Admin du Tuto FOSUserBundle
             template: 'email/registration.email.twig'
 
+knp_snappy:  
+    pdf:
+        enabled:    true
+        binary:     %kernel.root_dir%/../vendor/h4cc/wkhtmltopdf-amd64/bin/wkhtmltopdf-amd64

@@ -45,4 +45,16 @@ class ScheduleRepository extends \Doctrine\ORM\EntityRepository
             ->getQuery()
             ->getResult();
     }
+
+    public function foundEvent($startDate)
+    {
+        return $this
+            ->createQueryBuilder('e')
+            ->select('AppBundle:Schedule', 'e.start')
+            ->where('e.start LIKE :start')
+            ->setParameter('start', $startDate.'%')
+            ->getQuery()
+            ->getResult();
+    }
+     
 }

@@ -1,0 +1,138 @@
+dressme_homepage:
+    path:     /
+    defaults: { _controller: DressmeBundle:Dressme:index}
+login:
+    path:     /login
+    defaults: { _controller: DressmeBundle:Dressme:login }
+home:
+    path:     /home
+    defaults: { _controller: DressmeBundle:Dressme:home }
+profil:
+    path:     /profil
+    defaults: { _controller: DressmeBundle:Dressme:profil }
+encaissement:
+    path:     /encaissement
+    defaults: { _controller: DressmeBundle:Dressme:encaissement }
+clients:
+    path:     /clients
+    defaults: { _controller: DressmeBundle:Dressme:clients }
+prestations:
+    path:     /prestations
+    defaults: { _controller: DressmeBundle:Dressme:prestations }
+fichetechnique:
+    path:     /fichetechnique
+    defaults: { _controller: DressmeBundle:Dressme:fichetechnique }
+
+statistique:
+    path:     /statistique
+    defaults: { _controller: DressmeBundle:Statistique:statistique }
+
+pdf:
+    path:     /pdf
+    defaults: { _controller: DressmeBundle:Statistique:pdf }
+
+
+client_index:
+    path:     /i
+    defaults: { _controller: "DressmeBundle:Client:index" }
+    methods:  GET
+
+client_show:
+    path:     /{id}/show
+    defaults: { _controller: "DressmeBundle:Client:show" }
+    methods:  GET
+
+client_new:
+    path:     /new
+    defaults: { _controller: "DressmeBundle:Client:new" }
+    methods:  [GET, POST]
+
+client_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "DressmeBundle:Client:edit" }
+    methods:  [GET, POST]
+
+client_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "DressmeBundle:Client:delete" }
+    methods:  GET
+
+prestation_index:
+    path:     /prestation/
+    defaults: { _controller: "DressmeBundle:Prestation:index" }
+    methods:  GET
+
+prestation_show:
+    path:     /prestation/{id}/show
+    defaults: { _controller: "DressmeBundle:Prestation:show" }
+    methods:  GET
+
+prestation_new:
+    path:     /prestation/new
+    defaults: { _controller: "DressmeBundle:Prestation:new" }
+    methods:  [GET, POST]
+
+prestation_edit:
+    path:     /prestation/{id}/edit
+    defaults: { _controller: "DressmeBundle:Prestation:edit" }
+    methods:  [GET, POST]
+
+prestation_delete:
+    path:     /prestation/{id}/delete
+    defaults: { _controller: "DressmeBundle:Prestation:delete" }
+    methods:  GET
+    
+encaissement_index:
+    path:     /encaissement/
+    defaults: { _controller: "DressmeBundle:Encaissement:index" }
+    methods:  GET
+
+encaissement_show:
+    path:     /encaissement/{id}/show
+    defaults: { _controller: "DressmeBundle:Encaissement:show" }
+    methods:  GET
+
+encaissement_new:
+    path:     /encaissement/new
+    defaults: { _controller: "DressmeBundle:Encaissement:new" }
+    methods:  [GET, POST]
+
+encaissement_edit:
+    path:     /encaissement/{id}/edit
+    defaults: { _controller: "DressmeBundle:Encaissement:edit" }
+    methods:  [GET, POST]
+
+encaissement_delete:
+    path:     /encaissement/{id}/delete
+    defaults: { _controller: "DressmeBundle:Encaissement:delete" }
+    methods:  GET
+    
+fiche_index:
+    path:     /fiche/
+    defaults: { _controller: "DressmeBundle:Fiche:index" }
+    methods:  GET
+
+fiche_show:
+    path:     /fiche/{id}/show
+    defaults: { _controller: "DressmeBundle:Fiche:show" }
+    methods:  GET
+
+fiche_new:
+    path:     /fiche/new
+    defaults: { _controller: "DressmeBundle:Fiche:new" }
+    methods:  [GET, POST]
+
+fiche_edit:
+    path:     /fiche/{id}/edit
+    defaults: { _controller: "DressmeBundle:Fiche:edit" }
+    methods:  [GET, POST]
+
+fiche_delete:
+    path:     /fiche/{id}/delete
+    defaults: { _controller: "DressmeBundle:Fiche:delete" }
+    methods:  GET
+
+event:
+    path:     /event/
+    defaults: { _controller: "DressmeBundle:Default:event" }
+    methods:  GET

@@ -1,0 +1,25 @@
+{% extends "DressmeBundle:Dressme:home.html.twig" %}
+{% block body %}
+
+
+
+
+<div class="container card-list">
+  <div class="card blue">
+    <div class="title">Prestations encaissés en mai 2018</div>
+    <div class="value">{{ encaissement }}</div>
+  </div>
+</div>
+
+<div class="container card-list">
+  <div class="card red">
+    <div class="title">Top 3 des prestations</div>
+    <div class="value"></div>
+  </div>
+</div>
+
+<br>
+
+<a href="{{ path('pdf') }}"><i class="fa fa-home" aria-hidden="true"></i><span class="hidden-xs hidden-sm">Exporter en pdf</span></a>
+
+{% endblock %}

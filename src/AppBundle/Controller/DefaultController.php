@@ -22,7 +22,7 @@ class DefaultController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($schedule);
             $em->flush(); 
-$request->getSession()->getFlashBag()->add('notice', 'Annonce bien enregistrée.');
+$request->getSession()->getFlashBag()->add('notice', 'Rendez-vous bien enregistre');
             return $this->redirectToRoute('rdv'); // Redirige vers la page
     }
         return $this->render('default/index.html.twig', array('myform' => $form->createView(), 
